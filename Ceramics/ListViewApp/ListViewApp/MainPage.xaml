@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListViewApp"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             x:Class="ListViewApp.MainPage">
+
+    <StackLayout BackgroundColor="MidnightBlue">
+        <Label Text="My Cats"
+               FontSize="Large"
+               TextColor="White"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               Margin="20 0 0 0" />
+        <ListView x:Name="CatsListView"
+                  VerticalOptions="FillAndExpand"
+                  Margin="0 20"></ListView>
+        <Button Text="Add Cat" 
+                BackgroundColor="MediumAquamarine" 
+                TextColor="White"
+                Margin="0 20 20 20"></Button>
+    </StackLayout>
+
+</ContentPage>

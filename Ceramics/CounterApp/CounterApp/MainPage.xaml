@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CounterApp"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             x:Class="CounterApp.MainPage">
+
+    <StackLayout>
+        <Label Text="Amazing Counter App" 
+               HorizontalOptions="Center"
+               VerticalOptions="Start" />
+        
+        <Button Text="Count"
+                BackgroundColor="DarkGreen"
+                TextColor="Azure"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Padding="10"
+                Clicked="IncreaseCount_OnClicked"></Button>
+
+        <Button Text="See Results"
+                BackgroundColor="DarkKhaki"
+                TextColor="Azure"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Padding="10"
+                Clicked="SeeResults_OnClicked"></Button>
+    </StackLayout>
+
+</ContentPage>
