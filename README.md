@@ -8,3 +8,5 @@ Projects used during my learnings around Xamarin
 
 ### ListView App
 * Initial learnings were around how to initially display a `ListView` with just some static data.
+* Need to be able to add an item to the `ListView`
+* Need to be able to remove an item from the `ListView`
