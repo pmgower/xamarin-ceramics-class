@@ -12,7 +12,30 @@ namespace ListViewApp
         public MainPage()
         {
             InitializeComponent();
-            CatsListView.ItemsSource = new List<string>() {"Item 1", "Item 2", "Item 3"};
+
+            var contacts = new List<Contact>()
+            {
+                new Contact()
+                {
+                    Name = "Umair",
+                    Number = "0456445450945",
+                    ImageUrl = "http://placeimg.com/200/200/people"
+                },
+                new Contact()
+                {
+                    Name = "Cat",
+                    Number = "034456445905",
+                    ImageUrl = "http://placekitten.com/200/200"
+                },
+                new Contact()
+                {
+                    Name = "Nature",
+                    Number = "56445905",
+                    ImageUrl = "http://placeimg.com/200/200/nature"
+                }
+            };
+            ContactListView.ItemsSource = contacts;
+            
         }
     }
 }

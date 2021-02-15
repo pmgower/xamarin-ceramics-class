@@ -12,14 +12,20 @@
                TextColor="White"
                HorizontalOptions="Center"
                VerticalOptions="Start"
-               Margin="20 0 0 0" />
-        <ListView x:Name="CatsListView"
+               Margin="0, 20, 0, 0" />
+        <ListView x:Name="ContactListView"
                   VerticalOptions="FillAndExpand"
-                  Margin="0 20"></ListView>
+                  Margin="20, 0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding Name}" Detail="{Binding Number}" ImageSource="{Binding ImageUrl}"></ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button Text="Add Cat" 
                 BackgroundColor="MediumAquamarine" 
                 TextColor="White"
-                Margin="0 20 20 20"></Button>
+                Margin="20, 0, 20, 20"></Button>
     </StackLayout>
 
 </ContentPage>
