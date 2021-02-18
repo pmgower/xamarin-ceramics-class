@@ -8,11 +8,13 @@
              x:Class="DataCollectionsApp.DetailPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello, Detail"
+            <Label x:Name="DetailTitle"
+                   Text="Hello, Detail"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" />
 
-            <local:VerticalListView x:Name="DetailListView" />
+            <!-- <local:DetailCollectionView x:Name="DetailListView" /> -->
+            <local:DetailCarouselView x:Name="DetailListView" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

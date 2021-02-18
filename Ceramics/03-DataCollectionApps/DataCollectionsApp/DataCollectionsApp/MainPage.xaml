@@ -8,11 +8,12 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Awesome Desk Item App!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
         
-        <local:VerticalListView />
+        <!-- <local:DetailCollectionView /> -->
+        <local:DetailCarouselView />
     </StackLayout>
 
 </ContentPage>

@@ -11,11 +11,11 @@ using Xamarin.Forms.Xaml;
 namespace DataCollectionsApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class VerticalListView : ContentView
+    public partial class DetailCollectionView : ContentView
     {
         private ObservableCollection<DeskItem> deskItems = DeskItem.DefaultDeskItemObservableCollection;
 
-        public VerticalListView()
+        public DetailCollectionView()
         {
             InitializeComponent();
 
@@ -27,7 +27,7 @@ namespace DataCollectionsApp
             var item = e.CurrentSelection.FirstOrDefault() as DeskItem;
             if (item.ContainedItems.Count > 0)
             {
-                Navigation.PushAsync(new DetailPage(item.ContainedItems));
+                Navigation.PushAsync(new DetailPage(item.Name, item.ContainedItems));
             }
         }
     }

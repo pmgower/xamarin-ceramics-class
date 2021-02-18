@@ -18,14 +18,16 @@ namespace DataCollectionsApp
         public DetailCarouselView()
         {
             InitializeComponent();
+
+            ItemCollection.ItemsSource = deskItems;
         }
 
         private void ItemCollection_OnCurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
         {
-            var item = e.CurrentItem as DeskItem;
-            if (item.ContainedItems.Count > 0)
+            var item = e.PreviousItem as DeskItem;
+            if (item?.ContainedItems.Count > 0)
             {
-                Navigation.PushAsync(new DetailPage(item.ContainedItems));
+                Navigation.PushAsync(new DetailPage(item.Name, item.ContainedItems));
             }
         }
     }

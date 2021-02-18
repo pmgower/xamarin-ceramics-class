@@ -13,10 +13,11 @@ namespace DataCollectionsApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailPage : ContentPage
     {
-        public DetailPage(ObservableCollection<DeskItem> itemContainedItems)
+        public DetailPage(string title, ObservableCollection<DeskItem> itemContainedItems)
         {
             InitializeComponent();
 
+            DetailTitle.Text = title;
             DetailListView.ItemCollection.ItemsSource = itemContainedItems;
         }
     }
