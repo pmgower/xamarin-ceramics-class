@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ApiCreationAndConsumptionApps"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             x:Class="ApiCreationAndConsumptionApps.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Monkey-ing around in Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+        <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                     Refreshing="RefreshView_OnRefreshing">
+            <CollectionView ItemsSource="{Binding Monkeys}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Aspect="AspectFill"
+                                Grid.RowSpan="2"
+                                HeightRequest="60"
+                                Source="{Binding ImageUrl}"
+                                WidthRequest="60" />
+                            <Label
+                                FontAttributes="Bold"
+                                Grid.Column="1"
+                                Text="{Binding Name}" />
+                            <Label
+                                FontAttributes="Italic"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Text="{Binding Description}"
+                                VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </StackLayout>
+
+</ContentPage>
