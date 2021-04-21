@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using RetirementApp.Models;
+using RetirementApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +15,19 @@ namespace RetirementApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            List<Account> accounts = new List<Account>()
+            {
+                new Account("Checking 1", 1500m, .051m, 100m),
+                new Account("Checking 2", 2500m, .052m, 200m),
+                new Account("Checking 3", 3500m, .053m, 300m),
+                new Account("Checking 4", 4500m, .054m, 400m)
+            };
+            
+            var calculator = new Calculator(accounts);
+
+            var calculatorViewModel = new CalculatorViewModel(calculator);
+
+            MainPage = new NavigationPage(new MainPage(calculatorViewModel));
         }
 
         protected override void OnStart()

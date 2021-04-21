@@ -12,4 +12,8 @@
     <ItemGroup>
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RetirementApp.ViewModels\RetirementApp.ViewModels.csproj" />
+    </ItemGroup>
 </Project>

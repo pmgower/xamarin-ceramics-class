@@ -2,13 +2,55 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RetirementApp"
-             x:Class="RetirementApp.MainPage">
+             xmlns:viewModels="clr-namespace:RetirementApp.ViewModels;assembly=RetirementApp.ViewModels"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             x:Class="RetirementApp.MainPage"
+             x:DataType="viewModels:CalculatorViewModel"
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Retirement Calculator!" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+           VerticalOptions="Start" />
 
+        <Label Text="Current Balance" 
+               HorizontalOptions="Center"
+               VerticalOptions="Start" />
+        <Label Text="{Binding CurrentBalance}"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"></Label>
+
+        <Label Text="Target Date" 
+               HorizontalOptions="Center"
+               VerticalOptions="Start" />
+        <Label Text="{Binding TargetDate}"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"></Label>
+
+        <CollectionView ItemsSource="{Binding Accounts}">
+               <CollectionView.ItemTemplate>
+                      <DataTemplate x:DataType="viewModels:AccountViewModel">
+                             <StackLayout Padding="0,4">
+                                    <Frame
+                                           BackgroundColor="LightBlue"
+                                           CornerRadius="5"
+                                           HasShadow="False"
+                                           Padding="4">
+                                           <StackLayout>
+                                                  <Label FontAttributes="Bold" Text="{Binding Name}" />
+                                                  <Label
+                                                         FontAttributes="Italic"
+                                                         Text="{Binding Balance}"
+                                                         VerticalOptions="End" />
+                                           </StackLayout>
+                                    </Frame>
+                             </StackLayout>
+                      </DataTemplate>
+               </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <Button Text="View Details" Clicked="ViewDetails"></Button>
+    </StackLayout>
 </ContentPage>
